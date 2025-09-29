@@ -1,0 +1,15 @@
+{
+    "name": "hexlet/code",
+    "autoload": {
+        "psr-4": {
+            "Elena\\PhpProject45\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Elena",
+            "email": "utv.header@gmail.com"
+        }
+    ],
+    "require": {}
+}
