@@ -1,5 +1,6 @@
 {
     "name": "hexlet/code",
+    "description": "Brain games",
     "autoload": {
         "psr-4": {
             "Elena\\PhpProject45\\": "src/"
@@ -11,5 +12,9 @@
             "email": "utv.header@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "bin": [
+        "bin/brain-games"
+    ],
+    "license": "MIT"
 }
