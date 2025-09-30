@@ -4,7 +4,8 @@
     "autoload": {
         "psr-4": {
             "Elena\\PhpProject45\\": "src/"
-        }
+        },
+        "files": ["src/Cli.php"]
     },
     "authors": [
         {
@@ -12,7 +13,9 @@
             "email": "utv.header@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "wp-cli/php-cli-tools": "^0.12.6"
+    },
     "bin": [
         "bin/brain-games"
     ],
