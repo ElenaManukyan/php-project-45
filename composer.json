@@ -3,9 +3,8 @@
     "description": "Brain games",
     "autoload": {
         "psr-4": {
-            "Elena\\PhpProject45\\": "src/"
-        },
-        "files": ["src/Cli.php"]
+            "BrainGames\\": "src/"
+        }
     },
     "authors": [
         {
@@ -17,7 +16,8 @@
         "wp-cli/php-cli-tools": "^0.12.6"
     },
     "bin": [
-        "bin/brain-games"
+        "bin/brain-games",
+        "bin/brain-even"
     ],
     "license": "MIT",
     "require-dev": {
