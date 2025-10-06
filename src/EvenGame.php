@@ -4,11 +4,15 @@ namespace BrainGames\EvenGame;
 
 use function BrainGames\Cli\tryAgain;
 use function BrainGames\Cli\congrats;
+use function BrainGames\Cli\greeting;
 use function cli\line;
 use function cli\prompt;
 
 function isEven()
 {
+    line('Welcome to the Brain Games!');
+    $name = prompt('May I have your name?');
+    line("Hello, %s!", $name);
     line('Answer "yes" if the number is even, otherwise answer "no".');
 
     for ($i = 0; $i < 3; $i += 1) {
@@ -22,10 +26,10 @@ function isEven()
             line('Correct!');
         } else {
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $expectedAnswer);
-            tryAgain();
+            line("Let's try again, %s!", $name);
             exit(1);
         }
     }
 
-    congrats();
+    line("Congratulations, %s!", $name);
 }
