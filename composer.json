@@ -3,7 +3,7 @@
     "description": "Brain games",
     "autoload": {
         "psr-4": {
-            "Php\\Package\\": "src"
+            "BrainGames\\": "src/"
         }
     },
     "authors": [
