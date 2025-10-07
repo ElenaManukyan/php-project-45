@@ -27,7 +27,7 @@ function isEven()
         } else {
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $expectedAnswer);
             line("Let's try again, %s!", $name);
-            exit(1);
+            return;
         }
     }
 
