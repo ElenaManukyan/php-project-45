@@ -12,3 +12,6 @@
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=ElenaManukyan_php-project-45&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=ElenaManukyan_php-project-45)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=ElenaManukyan_php-project-45&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=ElenaManukyan_php-project-45)
 ### Hexlet tests and linter status:
+
+### Brain-even game demo:
+[![asciicast](https://asciinema.org/a/230NgMHu4DJAJPvyUHEKsckZG.svg)](https://asciinema.org/a/230NgMHu4DJAJPvyUHEKsckZG)
