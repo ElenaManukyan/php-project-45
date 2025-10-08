@@ -2,13 +2,13 @@ install:
 	composer install
 
 brain-games:
-	./bin/brain-games
+	./bin/Games/brain-games
 
 brain-even:
-	./bin/brain-even
+	./bin/Games/brain-even
 
 brain-calc:
-	./bin/brain-calc
+	./bin/Games/brain-calc
 
 validate:
 	composer validate

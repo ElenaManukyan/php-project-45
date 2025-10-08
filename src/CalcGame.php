@@ -4,14 +4,14 @@ namespace BrainGames\CalcGame;
 
 use function cli\line;
 use function cli\prompt;
+use function BrainGames\Engine\greeting;
+use function BrainGames\Engine\tryAgain;
+use function BrainGames\Engine\congrats;
 
 function calc()
 {
-    line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
-    line('What is the result of the expression?');
-
+    greeting($name);
 
     for ($i = 0; $i < 3; $i += 1) {
         $randomNumberFirst = random_int(1, 100);
@@ -38,10 +38,10 @@ function calc()
         } else {
             line("Your answer: '%s'", $answer);
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $expectedAnswer);
-            line("Let's try again, %s!", $name);
+            tryAgain($name);
             return;
         }
     }
 
-    line("Congratulations, %s!", $name);
+    congrats($name);
 }
