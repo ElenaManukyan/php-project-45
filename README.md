@@ -15,3 +15,6 @@
 
 ### Brain-even game demo:
 [![asciicast](https://asciinema.org/a/230NgMHu4DJAJPvyUHEKsckZG.svg)](https://asciinema.org/a/230NgMHu4DJAJPvyUHEKsckZG)
+
+### Brain-calc game demo:
+[![asciicast](https://asciinema.org/a/SRxYoIEXDZgJ37N4JhlbEQ0QS.svg)](https://asciinema.org/a/SRxYoIEXDZgJ37N4JhlbEQ0QS)
