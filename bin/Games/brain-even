@@ -5,5 +5,7 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use function BrainGames\EvenGame\isEven;
+use function BrainGames\Engine\greeting;
 
+greeting();
 isEven();

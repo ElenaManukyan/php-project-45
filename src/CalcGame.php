@@ -2,9 +2,6 @@
 
 namespace BrainGames\CalcGame;
 
-use function BrainGames\Cli\tryAgain;
-use function BrainGames\Cli\congrats;
-use function BrainGames\Cli\greeting;
 use function cli\line;
 use function cli\prompt;
 

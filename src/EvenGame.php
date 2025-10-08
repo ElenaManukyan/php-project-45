@@ -2,19 +2,15 @@
 
 namespace BrainGames\EvenGame;
 
-use function BrainGames\Cli\tryAgain;
-use function BrainGames\Cli\congrats;
-use function BrainGames\Cli\greeting;
 use function cli\line;
 use function cli\prompt;
+use function BrainGames\Engine\greeting;
 
 function isEven()
 {
-    line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
-    line('Answer "yes" if the number is even, otherwise answer "no".');
-
+    greeting($name);
+    
     for ($i = 0; $i < 3; $i += 1) {
         $randomNumber = random_int(1, 100);
         line('Question: %s', $randomNumber);

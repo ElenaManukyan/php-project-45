@@ -2,13 +2,11 @@
     "name": "hexlet/code",
     "description": "Brain games",
     "autoload": {
-        "psr-4": {
-            "BrainGames\\": "src/"
-        },
         "files": [
             "src/Cli.php",
             "src/EvenGame.php",
-            "src/CalcGame.php"
+            "src/CalcGame.php",
+            "src/Engine.php"
         ]
     },
     "authors": [
