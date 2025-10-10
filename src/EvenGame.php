@@ -7,12 +7,14 @@ use function cli\prompt;
 use function BrainGames\Engine\greeting;
 use function BrainGames\Engine\tryAgain;
 use function BrainGames\Engine\congrats;
+use function BrainGames\Cli\welcome;
 
 function isEven()
 {
+    welcome();
     $name = prompt('May I have your name?');
-
     greeting($name);
+    line('Answer "yes" if the number is even, otherwise answer "no".');
 
     for ($i = 0; $i < 3; $i += 1) {
         $randomNumber = random_int(1, 100);

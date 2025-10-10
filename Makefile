@@ -10,6 +10,9 @@ brain-even:
 brain-calc:
 	./bin/Games/brain-calc
 
+brain-gcd:
+	./bin/Games/brain-gcd
+
 validate:
 	composer validate
 

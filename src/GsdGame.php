@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\CalcGame;
+namespace BrainGames\GsdGame;
 
 use function cli\line;
 use function cli\prompt;
@@ -9,33 +9,32 @@ use function BrainGames\Engine\tryAgain;
 use function BrainGames\Engine\congrats;
 use function BrainGames\Cli\welcome;
 
-function calc()
+function isGsd()
 {
     welcome();
-
     $name = prompt('May I have your name?');
     greeting($name);
-    line('What is the result of the expression?');
+    line('Find the greatest common divisor of given numbers.');
+
+    function gcd($a, $b) {
+        while ($b != 0) {
+            $temp = $b;
+            $b = $a % $b;
+            $a = $temp;
+        }
+        return abs($a);
+    }
 
     for ($i = 0; $i < 3; $i += 1) {
         $randomNumberFirst = random_int(1, 100);
         $randomNumberSecond = random_int(1, 100);
-        $operands = ['+', '-', '*'];
-        $selectOperand = $operands[random_int(0, count($operands) - 1)];
-        $question = "{$randomNumberFirst} {$selectOperand} {$randomNumberSecond}";
-
+        
+        $question = "{$randomNumberFirst} {$randomNumberSecond}";
+        
         line('Question: %s', $question);
         $answer = prompt('Your answer');
 
-        $expectedAnswer = 0;
-
-        if ($selectOperand === '+') {
-            $expectedAnswer = $randomNumberFirst + $randomNumberSecond;
-        } elseif ($selectOperand === '-') {
-            $expectedAnswer = $randomNumberFirst - $randomNumberSecond;
-        } elseif ($selectOperand === '*') {
-            $expectedAnswer = $randomNumberFirst * $randomNumberSecond;
-        }
+        $expectedAnswer = gcd($randomNumberFirst, $randomNumberSecond);
 
         if (intval($answer) === $expectedAnswer) {
             line('Correct!');
