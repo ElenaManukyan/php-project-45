@@ -17,7 +17,8 @@ function progression()
     greeting($name);
     line('What number is missing in the progression?');
 
-    function generateProgression($start, $step) {
+    function generateProgression($start, $step)
+    {
         $progression = [];
 
         for ($i = 0; $i <= 10; $i += 1) {
@@ -28,7 +29,6 @@ function progression()
     }
 
     for ($i = 0; $i < 3; $i += 1) {
-        
         $randomNumberFirst = random_int(1, 100);
         $st = random_int(1, 5);
         $progr = generateProgression($randomNumberFirst, $st);
