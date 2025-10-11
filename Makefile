@@ -13,6 +13,9 @@ brain-calc:
 brain-gcd:
 	./bin/Games/brain-gcd
 
+brain-progression:
+	./bin/Games/brain-progression
+
 validate:
 	composer validate
 
