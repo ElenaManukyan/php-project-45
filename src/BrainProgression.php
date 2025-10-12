@@ -32,7 +32,7 @@ function progression(): void
         $randomNumberFirst = random_int(1, 100);
         $st = random_int(1, 5);
         $progr = generateProgression($randomNumberFirst, $st);
-        $hiddenElIndex = random_int(0, (count($progr) - 1));
+        $hiddenElIndex = random_int(0, 10);
         $hiddenEl = $progr[$hiddenElIndex];
         $progr[$hiddenElIndex] = '..';
         $questionProgr = implode(' ', $progr);
