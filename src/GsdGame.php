@@ -9,22 +9,22 @@ use function BrainGames\Engine\tryAgain;
 use function BrainGames\Engine\congrats;
 use function BrainGames\Cli\welcome;
 
-function isGsd()
+function gcd(int $a,int $b): int
+{
+    while ($b !== 0) {
+        $temp = $b;
+        $b = $a % $b;
+        $a = $temp;
+    }
+    return abs($a);
+}
+
+function isGsd(): void
 {
     welcome();
     $name = prompt('May I have your name?');
     greeting($name);
     line('Find the greatest common divisor of given numbers.');
-
-    function gcd($a, $b)
-    {
-        while ($b != 0) {
-            $temp = $b;
-            $b = $a % $b;
-            $a = $temp;
-        }
-        return abs($a);
-    }
 
     for ($i = 0; $i < 3; $i += 1) {
         $randomNumberFirst = random_int(1, 100);

@@ -9,7 +9,7 @@ use function BrainGames\Engine\tryAgain;
 use function BrainGames\Engine\congrats;
 use function BrainGames\Cli\welcome;
 
-function brainGames()
+function brainGames(): void
 {
     welcome();
     $name = prompt('May I have your name?');

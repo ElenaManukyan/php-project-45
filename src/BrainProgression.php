@@ -9,24 +9,24 @@ use function BrainGames\Engine\tryAgain;
 use function BrainGames\Engine\congrats;
 use function BrainGames\Cli\welcome;
 
-function progression()
+function generateProgression(int $start, int $step): array
+{
+    $progression = [];
+
+    for ($i = 0; $i <= 10; $i += 1) {
+        $progression[] = $start + $i * $step;
+    }
+
+    return $progression;
+}
+
+function progression(): void
 {
     welcome();
 
     $name = prompt('May I have your name?');
     greeting($name);
     line('What number is missing in the progression?');
-
-    function generateProgression($start, $step)
-    {
-        $progression = [];
-
-        for ($i = 0; $i <= 10; $i += 1) {
-            $progression[] = $start + $i * $step;
-        }
-
-        return $progression;
-    }
 
     for ($i = 0; $i < 3; $i += 1) {
         $randomNumberFirst = random_int(1, 100);
