@@ -9,7 +9,7 @@ use function BrainGames\Engine\tryAgain;
 use function BrainGames\Engine\congrats;
 use function BrainGames\Cli\welcome;
 
-function gcd(int $a,int $b): int
+function gcd(int $a, int $b): int
 {
     while ($b !== 0) {
         $temp = $b;
