@@ -9,7 +9,8 @@
             "src/Engine.php",
             "src/GsdGame.php",
             "src/BrainProgression.php",
-            "src/isPrime.php"
+            "src/isPrime.php",
+            "src/BrainGames.php"
         ]
     },
     "authors": [
