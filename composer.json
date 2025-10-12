@@ -8,7 +8,8 @@
             "src/CalcGame.php",
             "src/Engine.php",
             "src/GsdGame.php",
-            "src/BrainProgression.php"
+            "src/BrainProgression.php",
+            "src/isPrime.php"
         ]
     },
     "authors": [
@@ -21,11 +22,12 @@
         "wp-cli/php-cli-tools": "^0.12.6"
     },
     "bin": [
-        "bin/brain-games",
-        "bin/brain-even",
-        "bin/brain-calc",
-        "bin/brain-gcd",
-        "bin/brain-progression"
+        "bin/Games/brain-games",
+        "bin/Games/brain-even",
+        "bin/Games/brain-calc",
+        "bin/Games/brain-gcd",
+        "bin/Games/brain-progression",
+        "bin/Games/brain-prime"
     ],
     "license": "MIT",
     "require-dev": {
