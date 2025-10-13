@@ -23,12 +23,12 @@
         "wp-cli/php-cli-tools": "^0.12.6"
     },
     "bin": [
-        "bin/Games/brain-games",
-        "bin/Games/brain-even",
-        "bin/Games/brain-calc",
-        "bin/Games/brain-gcd",
-        "bin/Games/brain-progression",
-        "bin/Games/brain-prime"
+        "bin/brain-games",
+        "bin/brain-even",
+        "bin/brain-calc",
+        "bin/brain-gcd",
+        "bin/brain-progression",
+        "bin/brain-prime"
     ],
     "license": "MIT",
     "require-dev": {
