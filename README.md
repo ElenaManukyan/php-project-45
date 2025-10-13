@@ -72,6 +72,3 @@ You can start any game using either ```make``` (see above) or by calling its bin
 
 ## 🤝 Contributing
 Contributions are welcome! Feel free to submit pull requests. For significant changes, please open an issue first to discuss your idea.
-
-## 📜 License
-[MIT License](LICENSE)
