@@ -5,9 +5,28 @@
 use function BrainGames\CalcGame\calc;
 
 // Путь, который будет использован при глобальной установке пакета
-$autoloadPath1 = __DIR__ . '/../../../../autoload.php';
-// Путь для локальной работы с проектом
+$autoloadPath1 = __DIR__ . '/autoload.php';
 $autoloadPath2 = __DIR__ . '/../../vendor/autoload.php';
+echo '<pre>';
+print_r($autoloadPath1);
+echo '</pre>';
+// Путь для локальной работы с проектом
+
+echo "Global autoload path: " . realpath($autoloadPath1) ?: $autoloadPath1 . " (not found)\n";
+
+// Проверим, существует ли файл
+if (file_exists($autoloadPath1)) {
+    echo "✅ Global autoload EXISTS\n";
+} else {
+    echo "❌ Global autoload NOT FOUND\n";
+}
+
+// Проверим, существует ли файл
+if (file_exists($autoloadPath2)) {
+    echo "✅ Local autoload EXISTS\n";
+} else {
+    echo "❌ Local autoload NOT FOUND\n";
+}
 
 if (file_exists($autoloadPath1)) {
     require_once $autoloadPath1;
