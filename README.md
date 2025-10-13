@@ -32,8 +32,8 @@ A collection of five console-based math games to sharpen your mental arithmetic 
 
 ### Setup
 ```bash
-git clone https://github.com/ElenaManukyan/brain-games-php.git
-cd brain-games-php
+git clone https://github.com/ElenaManukyan/php-project-45.git
+cd php-project-45
 composer install
 ```
 After installation, the game executables will be available in the ```bin/Games/``` directory and can be run directly.
