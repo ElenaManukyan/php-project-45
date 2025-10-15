@@ -37,7 +37,7 @@ function calc(): void
 
 function calculate(int $num1, int $num2, string $operand): int
 {
-    $expectedAnswer;
+    $expectedAnswer = 0;
     if ($operand === '+') {
         $expectedAnswer = $num1 + $num2;
     } elseif ($operand === '-') {
