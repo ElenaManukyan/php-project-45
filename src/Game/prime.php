@@ -18,9 +18,9 @@ function prime(): void
         line('Question: %s', $randomNumber);
         $answer = prompt('Your answer');
 
-        $correctAnswer = isPrimeInner($randomNumber);
+        $correctAnswer = isPrimeInner($randomNumber) ? 'yes' : 'no';
 
-        if (($correctAnswer && ($answer === 'yes')) || (!$correctAnswer && ($answer === 'no'))) {
+        if ((($correctAnswer === 'yes') && ($answer === 'yes')) || (($correctAnswer === 'no') && ($answer === 'no'))) {
             runDialogue('correct');
         } else {
             runDialogue('tryAgain', $name, $answer, $correctAnswer);
