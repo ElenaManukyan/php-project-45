@@ -9,7 +9,7 @@
             "src/Engine.php",
             "src/Game/GsdGame.php",
             "src/Game/BrainProgression.php",
-            "src/Game/Prime.php",
+            "src/Game/prime.php",
             "src/Game/BrainGames.php"
         ]
     },

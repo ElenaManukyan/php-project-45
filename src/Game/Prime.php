@@ -7,7 +7,7 @@ use function cli\prompt;
 use function BrainGames\Engine\runDialogue;
 use function BrainGames\Cli\welcome;
 
-function Prime(): void
+function prime(): void
 {
     $name = welcome();
     line('Answer "yes" if given number is prime. Otherwise answer "no".');
