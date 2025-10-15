@@ -32,7 +32,7 @@ function calc(): void
         }
     }
 
-    runDialogue('congrats');
+    runDialogue('congrats', $name);
 }
 
 function calculate(int $num1, int $num2, string $operand): int

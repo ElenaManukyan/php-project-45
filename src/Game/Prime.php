@@ -28,7 +28,7 @@ function Prime(): void
         }
     }
 
-    runDialogue('congrats');
+    runDialogue('congrats', $name);
 }
 
 function isPrimeInner(int $num): bool

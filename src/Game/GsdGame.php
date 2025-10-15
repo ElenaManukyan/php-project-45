@@ -39,5 +39,5 @@ function isGsd(): void
         }
     }
 
-    runDialogue('congrats');
+    runDialogue('congrats', $name);
 }

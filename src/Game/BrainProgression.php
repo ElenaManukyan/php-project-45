@@ -43,5 +43,5 @@ function progression(): void
         }
     }
 
-    runDialogue('congrats');
+    runDialogue('congrats', $name);
 }

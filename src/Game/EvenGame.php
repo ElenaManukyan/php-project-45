@@ -27,7 +27,7 @@ function isEven(): void
         }
     }
 
-    runDialogue('congrats');
+    runDialogue('congrats', $name);
 }
 
 function even(int $num): bool
