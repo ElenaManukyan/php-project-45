@@ -34,7 +34,7 @@ function isGsd(): void
         if (intval($answer) === $expectedAnswer) {
             runDialogue('correct');
         } else {
-            runDialogue('tryAgain', $name, $answer, $hiddenEl);
+            runDialogue('tryAgain', $name, $answer, $expectedAnswer);
             return;
         }
     }
