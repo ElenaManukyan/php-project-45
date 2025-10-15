@@ -4,16 +4,12 @@ namespace BrainGames\EvenGame;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Engine\greeting;
-use function BrainGames\Engine\tryAgain;
-use function BrainGames\Engine\congrats;
+use function BrainGames\Engine\runDialogue;
 use function BrainGames\Cli\welcome;
 
 function isEven(): void
 {
-    welcome();
-    $name = prompt('May I have your name?');
-    greeting($name);
+    $name = welcome();
     line('Answer "yes" if the number is even, otherwise answer "no".');
 
     for ($i = 0; $i < 3; $i += 1) {
@@ -21,16 +17,20 @@ function isEven(): void
         line('Question: %s', $randomNumber);
         $answer = prompt('Your answer');
 
-        $expectedAnswer = ($randomNumber % 2 === 0) ? 'yes' : 'no';
+        $expectedAnswer = (even($randomNumber)) ? 'yes' : 'no';
 
         if ($answer === $expectedAnswer) {
-            line('Correct!');
+            runDialogue('correct');
         } else {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $expectedAnswer);
-            tryAgain($name);
+            runDialogue('tryAgain', $name, $answer, $expectedAnswer);
             return;
         }
     }
 
-    congrats($name);
+    runDialogue('congrats');
+}
+
+function even(int $num): bool
+{
+    return ($num % 2 === 0);
 }

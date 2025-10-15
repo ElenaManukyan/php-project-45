@@ -4,9 +4,7 @@ namespace BrainGames\BrainProgression;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Engine\greeting;
-use function BrainGames\Engine\tryAgain;
-use function BrainGames\Engine\congrats;
+use function BrainGames\Engine\runDialogue;
 use function BrainGames\Cli\welcome;
 
 function generateProgression(int $start, int $step): array
@@ -22,10 +20,7 @@ function generateProgression(int $start, int $step): array
 
 function progression(): void
 {
-    welcome();
-
-    $name = prompt('May I have your name?');
-    greeting($name);
+    $name = welcome();
     line('What number is missing in the progression?');
 
     for ($i = 0; $i < 3; $i += 1) {
@@ -41,13 +36,12 @@ function progression(): void
         $answer = prompt('Your answer');
 
         if (intval($answer) === $hiddenEl) {
-            line('Correct!');
+            runDialogue('correct');
         } else {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $hiddenEl);
-            tryAgain($name);
+            runDialogue('tryAgain', $name, $answer, $hiddenEl);
             return;
         }
     }
 
-    congrats($name);
+    runDialogue('congrats');
 }

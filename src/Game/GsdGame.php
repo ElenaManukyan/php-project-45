@@ -4,9 +4,7 @@ namespace BrainGames\GsdGame;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Engine\greeting;
-use function BrainGames\Engine\tryAgain;
-use function BrainGames\Engine\congrats;
+use function BrainGames\Engine\runDialogue;
 use function BrainGames\Cli\welcome;
 
 function gcd(int $a, int $b): int
@@ -21,9 +19,7 @@ function gcd(int $a, int $b): int
 
 function isGsd(): void
 {
-    welcome();
-    $name = prompt('May I have your name?');
-    greeting($name);
+    $name = welcome();
     line('Find the greatest common divisor of given numbers.');
 
     for ($i = 0; $i < 3; $i += 1) {
@@ -36,14 +32,12 @@ function isGsd(): void
         $expectedAnswer = gcd($randomNumberFirst, $randomNumberSecond);
 
         if (intval($answer) === $expectedAnswer) {
-            line('Correct!');
+            runDialogue('correct');
         } else {
-            line("Your answer: '%s'", $answer);
-            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $expectedAnswer);
-            tryAgain($name);
+            runDialogue('tryAgain', $name, $answer, $hiddenEl);
             return;
         }
     }
 
-    congrats($name);
+    runDialogue('congrats');
 }
