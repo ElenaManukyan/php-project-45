@@ -23,7 +23,7 @@ function Prime(): void
         if (($correctAnswer && ($answer === 'yes')) || (!$correctAnswer && ($answer === 'no'))) {
             runDialogue('correct');
         } else {
-            runDialogue('tryAgain', $name, $answer, $hiddenEl);
+            runDialogue('tryAgain', $name, $answer, $correctAnswer);
             return;
         }
     }
