@@ -3,17 +3,38 @@
 namespace BrainGames\Engine;
 
 use function cli\line;
+use function cli\prompt;
 
-function runDialogue(string $step = '', string $name = '', string|int $userAns = '', string|int $corrAnswer = ''): void
+function playGame(string $descr, string $question, string|int $rightAnswer, int $iteration): bool
 {
-    if ($step === 'tryAgain') {
-        line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAns, $corrAnswer);
-        line("Let's try again, %s!", $name);
-    }
-    if ($step === 'congrats') {
+
+    //for ($i = 0; $i < 3; $i += 1) {
+
+    $name = '';
+
+        if ($iteration === 0) {
+            line('Welcome to the Brain Games!');
+            $name = prompt('May I have your name?');
+            line("Hello, %s!", $name);
+
+            line($descr);
+        }
+
+        line('Question: %s', $question);
+        $answer = prompt('Your answer');
+
+        if (intval($answer) === $rightAnswer || $answer === $rightAnswer) {
+            line('Correct!');
+        } else {
+            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $rightAnswer);
+            line("Let's try again, %s!", $name);
+            return false;
+        }
+    //}
+    
+    if ($iteration === 2) {
         line("Congratulations, %s!", $name);
+        return true;
     }
-    if ($step === 'correct') {
-        line('Correct!');
-    }
+    
 }

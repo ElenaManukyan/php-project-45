@@ -4,31 +4,34 @@ namespace BrainGames\isPrime;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Engine\runDialogue;
+use function BrainGames\Engine\playGame;
 use function BrainGames\Cli\welcome;
 
-function prime(): void
+function startPrime(): void
 {
-    $name = welcome();
-    line('Answer "yes" if given number is prime. Otherwise answer "no".');
+    //$name = welcome();
+    //line('Answer "yes" if given number is prime. Otherwise answer "no".');
 
-    for ($i = 0; $i < 3; $i += 1) {
+    //for ($i = 0; $i < 3; $i += 1) {
+        $description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
         $randomNumber = random_int(0, 100);
 
-        line('Question: %s', $randomNumber);
-        $answer = prompt('Your answer');
+        //line('Question: %s', $randomNumber);
+        //$answer = prompt('Your answer');
 
         $correctAnswer = isPrimeInner($randomNumber) ? 'yes' : 'no';
 
-        if ((($correctAnswer === 'yes') && ($answer === 'yes')) || (($correctAnswer === 'no') && ($answer === 'no'))) {
-            runDialogue('correct');
-        } else {
-            runDialogue('tryAgain', $name, $answer, $correctAnswer);
-            return;
-        }
-    }
+        playGame($description, $randomNumber, $correctAnswer);
 
-    runDialogue('congrats', $name);
+        //if ((($correctAnswer === 'yes') && ($answer === 'yes')) || (($correctAnswer === 'no') && ($answer === 'no'))) {
+        //    playGame('correct');
+        //} else {
+        //    playGame('tryAgain', $name, $answer, $correctAnswer);
+        //    return;
+        //}
+    //}
+
+    //playGame('congrats', $name);
 }
 
 function isPrimeInner(int $num): bool

@@ -4,7 +4,7 @@ namespace BrainGames\BrainProgression;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Engine\runDialogue;
+use function BrainGames\Engine\playGame;
 use function BrainGames\Cli\welcome;
 
 function generateProgression(int $start, int $step): array
@@ -18,30 +18,42 @@ function generateProgression(int $start, int $step): array
     return $progression;
 }
 
-function progression(): void
+function startProgression(): void
 {
-    $name = welcome();
-    line('What number is missing in the progression?');
+    //$name = welcome();
+    //line('What number is missing in the progression?');
 
-    for ($i = 0; $i < 3; $i += 1) {
-        $randomNumberFirst = random_int(1, 100);
-        $st = random_int(1, 5);
-        $progr = generateProgression($randomNumberFirst, $st);
-        $hiddenElIndex = random_int(0, 10);
-        $hiddenEl = $progr[$hiddenElIndex];
-        $progr[$hiddenElIndex] = '..';
-        $questionProgr = implode(' ', $progr);
+    //for ($i = 0; $i < 3; $i += 1) {
+        $description = 'What number is missing in the progression?';
+        
 
-        line('Question: %s', $questionProgr);
-        $answer = prompt('Your answer');
+        for ($i = 0; $i < 3; $i += 1) {
+            $randomNumberFirst = random_int(1, 100);
+            $st = random_int(1, 5);
+            $progr = generateProgression($randomNumberFirst, $st);
+            $hiddenElIndex = random_int(0, 10);
+            $hiddenEl = $progr[$hiddenElIndex];
+            $progr[$hiddenElIndex] = '..';
+            $questionProgr = implode(' ', $progr);
 
-        if (intval($answer) === $hiddenEl) {
-            runDialogue('correct');
-        } else {
-            runDialogue('tryAgain', $name, $answer, $hiddenEl);
-            return;
+            $res = playGame($description, $questionProgr, $hiddenEl, $i);
+
+            if (!$res) {
+                return;
+            }
         }
-    }
 
-    runDialogue('congrats', $name);
+        // playGame($description, $questionProgr, $hiddenEl);
+        //line('Question: %s', $questionProgr);
+        //$answer = prompt('Your answer');
+
+        //if (intval($answer) === $hiddenEl) {
+        //    playGame('correct');
+        //} else {
+        //    playGame('tryAgain', $name, $answer, $hiddenEl);
+        //    return;
+        //}
+    //}
+
+    //playGame('congrats', $name);
 }

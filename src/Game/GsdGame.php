@@ -4,10 +4,10 @@ namespace BrainGames\GsdGame;
 
 use function cli\line;
 use function cli\prompt;
-use function BrainGames\Engine\runDialogue;
+use function BrainGames\Engine\playGame;
 use function BrainGames\Cli\welcome;
 
-function gcd(int $a, int $b): int
+function isGcd(int $a, int $b): int
 {
     while ($b !== 0) {
         $temp = $b;
@@ -17,27 +17,30 @@ function gcd(int $a, int $b): int
     return abs($a);
 }
 
-function isGsd(): void
+function startGsd(): void
 {
-    $name = welcome();
-    line('Find the greatest common divisor of given numbers.');
+    //$name = welcome();
+    //line('Find the greatest common divisor of given numbers.');
 
-    for ($i = 0; $i < 3; $i += 1) {
+    //for ($i = 0; $i < 3; $i += 1) {
+        $description = 'Find the greatest common divisor of given numbers.';
         $randomNumberFirst = random_int(1, 100);
         $randomNumberSecond = random_int(1, 100);
         $question = "{$randomNumberFirst} {$randomNumberSecond}";
-        line('Question: %s', $question);
-        $answer = prompt('Your answer');
+        //line('Question: %s', $question);
+        //$answer = prompt('Your answer');
 
-        $expectedAnswer = gcd($randomNumberFirst, $randomNumberSecond);
+        $expectedAnswer = isGcd($randomNumberFirst, $randomNumberSecond);
 
-        if (intval($answer) === $expectedAnswer) {
-            runDialogue('correct');
-        } else {
-            runDialogue('tryAgain', $name, $answer, $expectedAnswer);
-            return;
-        }
-    }
+        playGame($description, $question, $expectedAnswer);
 
-    runDialogue('congrats', $name);
+        //if (intval($answer) === $expectedAnswer) {
+       //     playGame('correct');
+       // } else {
+        //    playGame('tryAgain', $name, $answer, $expectedAnswer);
+       //     return;
+       // }
+    //}
+
+    //playGame('congrats', $name);
 }
