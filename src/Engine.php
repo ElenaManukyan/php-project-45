@@ -5,10 +5,10 @@ namespace BrainGames\Engine;
 use function cli\line;
 use function cli\prompt;
 
+$name = '';
+
 function playGame(string $descr, string $question, string|int $rightAnswer, int $iteration): bool
 {
-
-    $name = '';
     if ($iteration === 0) {
         line('Welcome to the Brain Games!');
         $name = prompt('May I have your name?');
