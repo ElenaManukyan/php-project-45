@@ -24,7 +24,7 @@ function startGsd(): void
         $randomNumberFirst = random_int(1, 100);
         $randomNumberSecond = random_int(1, 100);
         $question = "{$randomNumberFirst} {$randomNumberSecond}";
-        $expectedAnswer = isGcd($randomNumberFirst, $randomNumberSecond);
+        $expectedAnswer = isGcd($randomNumberFirst, $randomNumberSecond, $i);
 
         $res = playGame($description, $question, $expectedAnswer);
 

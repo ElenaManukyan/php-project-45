@@ -16,7 +16,7 @@ function startPrime(): void
 
         $correctAnswer = isPrimeInner($randomNumber) ? 'yes' : 'no';
 
-        $res = playGame($description, $randomNumber, $correctAnswer);
+        $res = playGame($description, $randomNumber, $correctAnswer, $i);
 
         if (!$res) {
             return;
