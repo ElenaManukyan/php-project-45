@@ -9,33 +9,22 @@ use function BrainGames\Cli\welcome;
 
 function startCalc(): void
 {
-    //$name = welcome();
-    //line('What is the result of the expression?');
-
-    //for ($i = 0; $i < 3; $i += 1) {
-        $description = 'What is the result of the expression?';
+    $description = 'What is the result of the expression?';
+    for ($i = 0; $i < 3; $i += 1) {
         $randomNumberFirst = random_int(1, 100);
         $randomNumberSecond = random_int(1, 100);
         $operands = ['+', '-', '*'];
         $selectOperand = $operands[random_int(0, count($operands) - 1)];
         $question = "{$randomNumberFirst} {$selectOperand} {$randomNumberSecond}";
 
-        //line('Question: %s', $question);
-        //$answer = prompt('Your answer');
-
         $expectedAnswer = calculate($randomNumberFirst, $randomNumberSecond, $selectOperand);
 
-        playGame($description, $question, $expectedAnswer);
+        $res = playGame($description, $question, $expectedAnswer, $i);
 
-        //if (intval($answer) === $expectedAnswer) {
-       //      playGame('correct');
-        //} else {
-        //    playGame('tryAgain', $name, $answer, $expectedAnswer);
-        //    return;
-        //}
-    //}
-
-    //playGame('congrats', $name);
+        if (!$res) {
+            return;
+        }
+    }
 }
 
 function calculate(int $num1, int $num2, string $operand): int

@@ -9,29 +9,19 @@ use function BrainGames\Cli\welcome;
 
 function startPrime(): void
 {
-    //$name = welcome();
-    //line('Answer "yes" if given number is prime. Otherwise answer "no".');
-
-    //for ($i = 0; $i < 3; $i += 1) {
+    $description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+    for ($i = 0; $i < 3; $i += 1) {
         $description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
         $randomNumber = random_int(0, 100);
 
-        //line('Question: %s', $randomNumber);
-        //$answer = prompt('Your answer');
-
         $correctAnswer = isPrimeInner($randomNumber) ? 'yes' : 'no';
 
-        playGame($description, $randomNumber, $correctAnswer);
+        $res = playGame($description, $randomNumber, $correctAnswer);
 
-        //if ((($correctAnswer === 'yes') && ($answer === 'yes')) || (($correctAnswer === 'no') && ($answer === 'no'))) {
-        //    playGame('correct');
-        //} else {
-        //    playGame('tryAgain', $name, $answer, $correctAnswer);
-        //    return;
-        //}
-    //}
-
-    //playGame('congrats', $name);
+        if (!$res) {
+            return;
+        }
+    }
 }
 
 function isPrimeInner(int $num): bool

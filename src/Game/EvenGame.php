@@ -9,28 +9,18 @@ use function BrainGames\Cli\welcome;
 
 function startEven(): void
 {
-    //$name = welcome();
-    //line('Answer "yes" if the number is even, otherwise answer "no".');
-
-    //for ($i = 0; $i < 3; $i += 1) {
-        $description = 'Answer "yes" if the number is even, otherwise answer "no".';
+    $description = 'Answer "yes" if the number is even, otherwise answer "no".';
+    for ($i = 0; $i < 3; $i += 1) {
         $randomNumber = random_int(1, 100);
-        //line('Question: %s', $randomNumber);
-        //$answer = prompt('Your answer');
 
         $expectedAnswer = (isEven($randomNumber)) ? 'yes' : 'no';
 
-        playGame($description, $randomNumber, $expectedAnswer);
+        $res = playGame($description, $randomNumber, $expectedAnswer, $i);
 
-        //if ($answer === $expectedAnswer) {
-        //    playGame('correct');
-        //} else {
-        //    playGame('tryAgain', $name, $answer, $expectedAnswer);
-        //    return;
-        //}
-    //}
-
-    //playGame('congrats', $name);
+        if (!$res) {
+            return;
+        }
+    }
 }
 
 function isEven(int $num): bool

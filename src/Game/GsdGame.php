@@ -19,28 +19,17 @@ function isGcd(int $a, int $b): int
 
 function startGsd(): void
 {
-    //$name = welcome();
-    //line('Find the greatest common divisor of given numbers.');
-
-    //for ($i = 0; $i < 3; $i += 1) {
-        $description = 'Find the greatest common divisor of given numbers.';
+    $description = 'Find the greatest common divisor of given numbers.';
+    for ($i = 0; $i < 3; $i += 1) {
         $randomNumberFirst = random_int(1, 100);
         $randomNumberSecond = random_int(1, 100);
         $question = "{$randomNumberFirst} {$randomNumberSecond}";
-        //line('Question: %s', $question);
-        //$answer = prompt('Your answer');
-
         $expectedAnswer = isGcd($randomNumberFirst, $randomNumberSecond);
 
-        playGame($description, $question, $expectedAnswer);
+        $res = playGame($description, $question, $expectedAnswer);
 
-        //if (intval($answer) === $expectedAnswer) {
-       //     playGame('correct');
-       // } else {
-        //    playGame('tryAgain', $name, $answer, $expectedAnswer);
-       //     return;
-       // }
-    //}
-
-    //playGame('congrats', $name);
+        if (!$res) {
+            return;
+        }
+    }
 }
