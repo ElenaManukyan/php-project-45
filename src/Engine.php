@@ -5,7 +5,7 @@ namespace BrainGames\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function playGame(string $descr, string $question, string|int $rightAnswer, int $iteration): bool
+function playGame(string $descr, string|int $question, string|int $rightAnswer, int $iteration): bool
 {
     static $name = '';
     if ($iteration === 0) {
