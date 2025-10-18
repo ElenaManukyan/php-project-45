@@ -7,7 +7,7 @@ use function cli\prompt;
 
 function playGame(string $descr, string $question, string|int $rightAnswer, int $iteration): bool
 {
-    $name;
+    static $name = '';
     if ($iteration === 0) {
         line('Welcome to the Brain Games!');
         $name = prompt('May I have your name?');
