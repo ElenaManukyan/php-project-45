@@ -7,7 +7,6 @@ use function BrainGames\Engine\playGame;
 function startEven(): void
 {
     $description = 'Answer "yes" if the number is even, otherwise answer "no".';
-    
     $numGames = 3;
     $roundData = [];
     for ($i = 0; $i < $numGames; $i++) {
