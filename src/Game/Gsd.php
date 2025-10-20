@@ -2,10 +2,28 @@
 
 namespace BrainGames\GsdGame;
 
-use function cli\line;
-use function cli\prompt;
 use function BrainGames\Engine\playGame;
-use function BrainGames\Cli\welcome;
+
+function startGsd(): void
+{
+    $description = 'Find the greatest common divisor of given numbers.';
+
+    $numGames = 3;
+    $roundData = [];
+    for ($i = 0; $i < $numGames; $i++) {
+        $randomNumberFirst = random_int(1, 100);
+        $randomNumberSecond = random_int(1, 100);
+        $question = "{$randomNumberFirst} {$randomNumberSecond}";
+        $expectedAnswer = isGcd($randomNumberFirst, $randomNumberSecond);
+
+        $roundData[] = [
+            'question' => $question,
+            'answer' => (string) $expectedAnswer,
+        ];
+    }
+
+    playGame($description, $roundData);
+}
 
 function isGcd(int $a, int $b): int
 {
@@ -15,21 +33,4 @@ function isGcd(int $a, int $b): int
         $a = $temp;
     }
     return abs($a);
-}
-
-function startGsd(): void
-{
-    $description = 'Find the greatest common divisor of given numbers.';
-    for ($i = 0; $i < 3; $i += 1) {
-        $randomNumberFirst = random_int(1, 100);
-        $randomNumberSecond = random_int(1, 100);
-        $question = "{$randomNumberFirst} {$randomNumberSecond}";
-        $expectedAnswer = isGcd($randomNumberFirst, $randomNumberSecond);
-
-        $res = playGame($description, $question, $expectedAnswer, $i);
-
-        if (!$res) {
-            return;
-        }
-    }
 }

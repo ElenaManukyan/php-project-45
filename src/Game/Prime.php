@@ -2,26 +2,25 @@
 
 namespace BrainGames\isPrime;
 
-use function cli\line;
-use function cli\prompt;
 use function BrainGames\Engine\playGame;
-use function BrainGames\Cli\welcome;
 
 function startPrime(): void
 {
     $description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-    for ($i = 0; $i < 3; $i += 1) {
-        $description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-        $randomNumber = random_int(0, 100);
 
+    $numGames = 3;
+    $roundData = [];
+    for ($i = 0; $i < $numGames; $i++) {
+        $randomNumber = random_int(0, 100);
         $correctAnswer = isPrimeInner($randomNumber) ? 'yes' : 'no';
 
-        $res = playGame($description, $randomNumber, $correctAnswer, $i);
-
-        if (!$res) {
-            return;
-        }
+        $roundData[] = [
+            'question' => $randomNumber,
+            'answer' => $correctAnswer,
+        ];
     }
+
+    playGame($description, $roundData);
 }
 
 function isPrimeInner(int $num): bool

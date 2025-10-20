@@ -2,15 +2,15 @@
 
 namespace BrainGames\CalcGame;
 
-use function cli\line;
-use function cli\prompt;
 use function BrainGames\Engine\playGame;
-use function BrainGames\Cli\welcome;
 
 function startCalc(): void
 {
     $description = 'What is the result of the expression?';
-    for ($i = 0; $i < 3; $i += 1) {
+
+    $numGames = 3;
+    $roundData = [];
+    for ($i = 0; $i < $numGames; $i++) {
         $randomNumberFirst = random_int(1, 100);
         $randomNumberSecond = random_int(1, 100);
         $operands = ['+', '-', '*'];
@@ -19,24 +19,25 @@ function startCalc(): void
 
         $expectedAnswer = calculate($randomNumberFirst, $randomNumberSecond, $selectOperand);
 
-        $res = playGame($description, $question, $expectedAnswer, $i);
-
-        if (!$res) {
-            return;
-        }
+        $roundData[] = [
+            'question' => $question,
+            'answer' => (string) $expectedAnswer,
+        ];
     }
+
+    playGame($description, $roundData);
 }
 
 function calculate(int $num1, int $num2, string $operand): int
 {
-    $expectedAnswer = 0;
-    if ($operand === '+') {
-        $expectedAnswer = $num1 + $num2;
-    } elseif ($operand === '-') {
-        $expectedAnswer = $num1 - $num2;
-    } elseif ($operand === '*') {
-        $expectedAnswer = $num1 * $num2;
+    switch ($operand) {
+        case '+':
+            return $num1 + $num2;
+        case '-':
+            return $num1 - $num2;
+        case '*':
+            return $num1 * $num2;
+        default:
+            throw new InvalidArgumentException("Unsupported operand: '$operand'");
     }
-
-    return $expectedAnswer;
 }

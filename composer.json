@@ -4,12 +4,12 @@
     "autoload": {
         "files": [
             "src/Cli.php",
-            "src/Game/EvenGame.php",
-            "src/Game/CalcGame.php",
+            "src/Game/Even.php",
+            "src/Game/Calc.php",
             "src/Engine.php",
-            "src/Game/GsdGame.php",
-            "src/Game/BrainProgression.php",
-            "src/Game/prime.php"
+            "src/Game/Gsd.php",
+            "src/Game/Progression.php",
+            "src/Game/Prime.php"
         ]
     },
     "authors": [
