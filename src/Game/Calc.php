@@ -39,6 +39,7 @@ function calculate(int $num1, int $num2, string $operand): int
         case '*':
             return $num1 * $num2;
         default:
-            throw new InvalidArgumentException("Unsupported operand: '$operand'");
+            // throw new InvalidArgumentException("Unsupported operand: '$operand'");
+            return 'undefined operand';
     }
 }
