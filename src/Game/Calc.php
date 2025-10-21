@@ -3,6 +3,7 @@
 namespace BrainGames\CalcGame;
 
 use function BrainGames\Engine\playGame;
+use Exception;
 
 function startCalc(): void
 {
@@ -29,7 +30,7 @@ function startCalc(): void
     playGame($description, $roundData);
 }
 
-function calculate(int $num1, int $num2, string $operand): int|string
+function calculate(int $num1, int $num2, string $operand): int
 {
     switch ($operand) {
         case '+':
