@@ -2,12 +2,13 @@
 
 namespace BrainGames\CalcGame;
 
-use function BrainGames\Engine\playGame;
 use Exception;
+
+use function BrainGames\Engine\playGame;
 
 function startCalc(): void
 {
-    // test
+
     $description = 'What is the result of the expression?';
 
     $numGames = 3;
