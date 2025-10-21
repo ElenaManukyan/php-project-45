@@ -29,7 +29,7 @@ function startCalc(): void
     playGame($description, $roundData);
 }
 
-function calculate(int $num1, int $num2, string $operand): int
+function calculate(int $num1, int $num2, string $operand): int|string
 {
     switch ($operand) {
         case '+':
@@ -39,7 +39,6 @@ function calculate(int $num1, int $num2, string $operand): int
         case '*':
             return $num1 * $num2;
         default:
-            // throw new InvalidArgumentException("Unsupported operand: '$operand'");
             return 'undefined operand';
     }
 }
