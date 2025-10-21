@@ -39,6 +39,6 @@ function calculate(int $num1, int $num2, string $operand): int|string
         case '*':
             return $num1 * $num2;
         default:
-            return 'undefined operand';
+            throw new Exception("Unsupported operand: '$operand'");
     }
 }
