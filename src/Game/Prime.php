@@ -4,13 +4,16 @@ namespace BrainGames\isPrime;
 
 use function BrainGames\Engine\playGame;
 
+const NUM_GAMES = 3;
+const DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
 function startPrime(): void
 {
-    $description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+    //$description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-    $numGames = 3;
+    //$numGames = 3;
     $roundData = [];
-    for ($i = 0; $i < $numGames; $i++) {
+    for ($i = 0; $i < NUM_GAMES; $i++) {
         $randomNumber = random_int(0, 100);
         $correctAnswer = isPrimeInner($randomNumber) ? 'yes' : 'no';
 
@@ -20,7 +23,7 @@ function startPrime(): void
         ];
     }
 
-    playGame($description, $roundData);
+    playGame(DESCRIPTION, $roundData);
 }
 
 function isPrimeInner(int $num): bool

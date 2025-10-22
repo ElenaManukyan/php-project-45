@@ -6,14 +6,17 @@ use Exception;
 
 use function BrainGames\Engine\playGame;
 
+const NUM_GAMES = 3;
+const DESCRIPTION = 'What is the result of the expression?';
+
 function startCalc(): void
 {
 
-    $description = 'What is the result of the expression?';
+    // $description = 'What is the result of the expression?';
 
-    $numGames = 3;
+    // $numGames = 3;
     $roundData = [];
-    for ($i = 0; $i < $numGames; $i++) {
+    for ($i = 0; $i < NUM_GAMES; $i++) {
         $randomNumberFirst = random_int(1, 100);
         $randomNumberSecond = random_int(1, 100);
         $operands = ['+', '-', '*'];
@@ -28,7 +31,7 @@ function startCalc(): void
         ];
     }
 
-    playGame($description, $roundData);
+    playGame(DESCRIPTION, $roundData);
 }
 
 function calculate(int $num1, int $num2, string $operand): int
