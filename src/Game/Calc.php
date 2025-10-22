@@ -11,10 +11,6 @@ const DESCRIPTION = 'What is the result of the expression?';
 
 function startCalc(): void
 {
-
-    // $description = 'What is the result of the expression?';
-
-    // $numGames = 3;
     $roundData = [];
     for ($i = 0; $i < NUM_GAMES; $i++) {
         $randomNumberFirst = random_int(1, 100);

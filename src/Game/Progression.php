@@ -9,9 +9,6 @@ const DESCRIPTION = 'What number is missing in the progression?';
 
 function startProgression(): void
 {
-    //$description = 'What number is missing in the progression?';
-
-    //$numGames = 3;
     $roundData = [];
     for ($i = 0; $i < NUM_GAMES; $i++) {
         $randomNumberFirst = random_int(1, 100);

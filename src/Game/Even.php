@@ -9,8 +9,6 @@ const DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 function startEven(): void
 {
-    //$description = 'Answer "yes" if the number is even, otherwise answer "no".';
-    //$numGames = 3;
     $roundData = [];
     for ($i = 0; $i < NUM_GAMES; $i++) {
         $randomNumber = random_int(1, 100);

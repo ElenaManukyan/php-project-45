@@ -9,9 +9,6 @@ const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 
 function startGsd(): void
 {
-    //$description = 'Find the greatest common divisor of given numbers.';
-
-    //$numGames = 3;
     $roundData = [];
     for ($i = 0; $i < NUM_GAMES; $i++) {
         $randomNumberFirst = random_int(1, 100);
