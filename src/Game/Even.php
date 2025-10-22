@@ -22,7 +22,7 @@ function startEven(): void
         ];
     }
 
-    playGame($description, $roundData);
+    playGame(DESCRIPTION, $roundData);
 }
 
 function isEven(int $num): bool
